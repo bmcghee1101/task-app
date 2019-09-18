@@ -10,7 +10,22 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true }, (error, client) =>
 
 	const db = client.db(databaseName)
 
+	db.collection('users').findOne({ _id: ObjectID("5d81b6457221cf3ed264303d") }, (error, user) => {
+		if (error) {
+			return console.log('Unable to fetch')
+		}
 
+		console.log(user)
+
+	})
+
+	db.collection('users').find({ name: 'Brendan' }).toArray((error, users) => {
+		console.log(users)
+	})
+
+	db.collection('users').find({ name: 'Brendan' }).count((error, count) => {
+		console.log(count)
+	})
 
 
 })
