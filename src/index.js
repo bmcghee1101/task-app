@@ -79,11 +79,6 @@ app.get('/tasks/:id', (req, res) => {
 })
 
 
-
-
-
-
-
 // Start sever listening
 app.listen(port, () => {
 	console.log('Server is up on port ' + port)
